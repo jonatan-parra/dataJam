@@ -1,145 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Usimte - Psicometria</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usimte - Psicometria</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-  </head>
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-	<!--banner-->
-	<section id="banner" class="banner">
-		<div class="bg-color">
-			<nav class="navbar navbar-default navbar-fixed-top">
-			  <div class="container">
-			  	<div class="col-md-12">
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-				      <a class="navbar-brand" href="#banner"><img src="img/logo3.png" class="img-responsive" style="width: 48px !important; margin-top: -16px;"></a>
-				    </div>
-				    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-				      <ul class="nav navbar-nav">
-				        <li class="active"><a href="#banner">Inicio</a></li>
-				        <li class=""><a href="#mapa">Mapa</a></li>
-				      </ul>
-				    </div>
-				</div>
-			  </div>
-			</nav>
-			<div class="container">
-				<div class="row">
-					<div class="banner-info">
-						<div class="banner-logo text-center">
-							<img src="img/logo2.png" class="img-responsive">
-						</div>
-						<div class="banner-text text-center">
-							<h1 class="white">Usimte - Psicometria</h1>
-							<p>Esta aplicacion está enfocada en proveer... </p>
-						</div>
-						<div class="overlay-detail text-center">
-			               <a href="#mapa"><i class="fa fa-angle-down"></i></a>
-			      </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- banner-->
+              <a class="navbar-brand" href="#banner"><img src="img/logo3.png" class="img-responsive" style="width: 48px !important; margin-top: -16px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#banner">Inicio</a></li>
+                <li class=""><a href="#mapa">Mapa</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+              <img src="img/logo2.png" class="img-responsive">
+            </div>
+            <div class="banner-text text-center">
+              <h1 class="white">Usimte - Psicometria</h1>
+              <p>Esta aplicacion está enfocada en proveer... </p>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#mapa"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner-->
 
 
-<div class="container">  <!-- Container principal -->
+  <div class="container">
+    <!-- Container principal -->
 
- <!-- mapa-->
-	<section id="mapa" class="section-padding">
-		<div class="row">
-			<h1>Mapa</h1>
-			<div class="col-md-12" id="map_container">
-				<div id="map"></div>
-			</div>
-		</div>
-	</section>
-  <!-- /mapa-->
+    <!-- mapa-->
+    <section id="mapa" class="section-padding">
+      <div class="row">
+        <h1>Mapa</h1>
+        <div class="col-md-12" id="map_container">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /mapa-->
+    <!-- Histograma -->
+    <section id="histograma" class="section-padding">
+      <div class="row">
+        <div class="col-md-12" id="histo_container">
+          <div id="histo">
+            <canvas id="myChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /histograma -->
+  </div>
+  <!-- Fin del container principal -->
+
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Acerca de nosotros</h4>
+            </div>
+            <div class="info-sec">
+              <p>Este projecto es desarrollado para el Data Jam.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Enlaces</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="quick-info">
+                <li><a href="#banner"><i class="fa fa-circle"></i>Inicio</a></li>
+                <li><a href="#mapa"><i class="fa fa-circle"></i>Mapa</a></li>
+                <li><a href="#"><i class="fa fa-circle"></i>Otro</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Siguenos</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="social-icon">
+                <li class="bgGithub red_social"><i class="fa fa-github"></i></li>
+                <li class="bgred red_social"><i class="fa fa-google-plus"></i></li>
+                <li class="bglight-blue red_social"><i class="fa fa-twitter"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <i class="fa fa-creative-commons" aria-hidden="true"> Data Jam</i>
+            <div class="credits">
+              Designed by Nombre integrantes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-->
 
 
-</div> <!-- Fin del container principal -->
-
-	<!--footer-->
-	<footer id="footer">
-		<div class="top-footer1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-4 marb20">
-							<div class="ftr-tle">
-								<h4 class="white no-padding">Acerca de nosotros</h4>
-							</div>
-							<div class="info-sec">
-								<p>Este projecto es desarrollado para el Data Jam.</p>
-							</div>
-					</div>
-					<div class="col-md-4 col-sm-4 marb20">
-						<div class="ftr-tle">
-							<h4 class="white no-padding">Enlaces</h4>
-						</div>
-						<div class="info-sec">
-							<ul class="quick-info">
-								<li><a href="#banner"><i class="fa fa-circle"></i>Inicio</a></li>
-								<li><a href="#mapa"><i class="fa fa-circle"></i>Mapa</a></li>
-								<li><a href="#"><i class="fa fa-circle"></i>Otro</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 marb20">
-						<div class="ftr-tle">
-							<h4 class="white no-padding">Siguenos</h4>
-						</div>
-						<div class="info-sec">
-							<ul class="social-icon">
-								<li class="bgGithub red_social"><i class="fa fa-github"></i></li>
-								<li class="bgred red_social"><i class="fa fa-google-plus"></i></li>
-								<li class="bglight-blue red_social"><i class="fa fa-twitter"></i></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-line">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<i class="fa fa-creative-commons" aria-hidden="true"> Data Jam</i>
-                        <div class="credits">
-                            Designed by Nombre integrantes
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- footer-->
-
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/map.js" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBomiMvRuxhyD_nIyDoFCn6jFbVyDnI&callback=initMap"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/motivacion.js"></script>
+  <script src="js/map.js" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBomiMvRuxhyD_nIyDoFCn6jFbVyDnI&callback=initMap"></script>
 
 
 
-  </body>
+</body>
+
 </html>
