@@ -5,7 +5,7 @@ var mostrando_alojamiento;
 
 $(document).ready(function() { 
 	ocultar_todo();
-
+	cargarAlojamiento();
 
 	$('#transporte').css('visibility', 'hidden');
 	$('#transporte').css('display', 'none');
@@ -44,6 +44,14 @@ function selecionar_favorito(){
 
 		$('#transporte').css('visibility', 'hidden');
 		$('#transporte').css('display', 'none');
+
+
+
+
+
+		
+
+
 	}
 	if (seleccion == 5) {
 		$('#transporte').css('visibility', 'visible');
@@ -158,10 +166,35 @@ function activar_busqueda_restaurantes(){
 	}
 }
 
+function activar_busqueda_alojamiento(){
+	console.log("Entro activar_busqueda_restaurantes")
+	cargar_tabla_alojamiento();
+	if (mostrando_restaurantes == false){
+		$('#busqueda_restaurantes').css('visibility', 'visible');
+		$('#busqueda_restaurantes').css('display', 'block');
+		mostrando_restaurantes = true;
+	} else {
+		$('#busqueda_restaurantes').css('visibility', 'hidden');
+		$('#busqueda_restaurantes').css('display', 'none');
+		mostrando_restaurantes = false;
+	}
+}
 
-function cargar_tabla_museos(){
-	var museos = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
-	var direccion = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+
+
+function cargar_tabla_museos(museos, direccion){
+	//var museos = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+	//var direccion = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+
+
+		datos = traer('museos');
+		var museos = getArrayColumn(datos, "nombre_del_museo");
+		var direccion = getArrayColumn(datos, "direccion");
+
+
+
+
+
 	respuesta = "";
 
 	respuesta = ' <table id="myTable"> ' +
@@ -172,21 +205,53 @@ function cargar_tabla_museos(){
 
 
 	for (var i = 0; i < museos.length; i++) {
-		respuesta += '<tr>' + '<td>' + museos[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
-		console.log("en for")
+		
+		respuesta += '<tr onclick="museos_mensaje( ' + i +' )">' + '<td>' + museos[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
+			
 	}
-
+// onclick="selecionar_transporte()"
 	respuesta += '</table>'
 
 	document.getElementById("mi_tabla_1").innerHTML = respuesta;
 }
 
+function museos_mensaje(nombre){
+	respuesta = museoInfo(nombre);
+	console.log(respuesta);
+	var r = "";
+	
+
+	document.getElementById("titulo").innerHTML = respuesta["nombre_del_museo"];
+	
+	r = "<strong> Caracter: </strong>" +  respuesta["caracter"];
+	r += "<br>"
+	r += " <strong> Celular:  </strong>" + respuesta["celular"];
+	r += "<br>"
+	r += " <strong> Correo:  </strong>" +  respuesta["correo_electr_nico"];
+	r += "<br>"
+	r += " <strong>  Dirección: </strong>" +  respuesta["direccion"];
+	r += "<br>"
+	r += "<strong>  localidad:  </strong>" +  respuesta["localidad"];
+	r += "<br>"
+	
+	r += " <strong> Página web: </strong> " + respuesta["pagina_web"];
+	r += "<br>"
+	r += " <strong>  Telefono fijo:  </strong>" + respuesta["telefono_fijo"];
+
+
+	console.log(r)
+	document.getElementById("contenido1").innerHTML = r;
+
+	$('#myModal').modal('show'); // abr
+
+
+}
 
 
 function cargar_tabla_restaurantes(){
-	console.log("Entro crear cargar_tabla_restaurantes")
-	var restaurantes = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
-	var direccion = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	
+	var restaurantes = ["restaurante 1", "restaurante 2", "restaurante 3", "restaurante 4"];
+	var direccion = ["direccion", "direccion 2", "direccion 3 ", "direccion 4"];
 	respuesta = "";
 
 	respuesta = ' <table id="myTable2"> ' +
@@ -205,6 +270,36 @@ function cargar_tabla_restaurantes(){
 
 	document.getElementById("mi_tabla_2").innerHTML = respuesta;
 }
+
+
+function cargar_tabla_alojamiento(){
+	
+	//var restaurantes = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	//var direccion = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	console.log("Entro a cargar_tabla_alojamiento")
+	restaurantes = sitios();
+	direccion = direcciones();
+	console.log(restaurantes)
+	respuesta = "";
+
+	respuesta = ' <table id="myTable3"> ' +
+                ' <tr class="header"> ' +
+                ' <th style="width:60%;">Nombre</th> ' +
+                ' <th style="width:40%;">Dirección</th> ' +
+                ' </tr>';
+
+
+	for (var i = 0; i < restaurantes.length; i++) {
+		respuesta += '<tr >' + '<td>' + restaurantes[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
+		console.log("en for")
+	}
+
+	respuesta += '</table>'
+
+	document.getElementById("mi_tabla_3").innerHTML = respuesta;
+}
+
+
 
 
 

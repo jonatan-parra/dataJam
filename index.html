@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Usimte - Psicometria</title>
+  <title>Bogotá Easy Tour</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -49,8 +49,9 @@
               <img src="img/logo2.png" class="img-responsive">
             </div>
             <div class="banner-text text-center">
-              <h1 class="white">Usimte - Psicometria</h1>
-              <p>Esta aplicacion está enfocada en proveer... </p>
+              <h1 class="white">Bogotá Easy Tour</h1>
+              <p>Esta aplicación está enfocada a suplir 3 necesidade básicas de los turistas: alojamiento
+              comida y sitios de interés. De una forma fácil e intuitiva </p>
             </div>
             <div class="overlay-detail text-center">
               <a href="#mapa"><i class="fa fa-angle-down"></i></a>
@@ -74,9 +75,15 @@
 
           <h2>Tus sitios favoritos</h2>
           <br>
+<<<<<<< HEAD
           <select onclick="selecionar_favorito()" name="propertyType" id="seleccion1">
                <option  value="1" selected="selected">Ninguno</option>
                <option  value="2">Alojamiento</option>
+=======
+            <select onclick="selecionar_favorito()" name="propertyType" id="seleccion1">
+               <option  value="1" selected="selected">Ninguno</option>
+               <option  value="2">Alojamiento</option>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
                <option  value="3">Restaurantes</option>
                <option  value="4">Museos</option>
                <option  value="5">Transporte</option>
@@ -87,64 +94,131 @@
           </div>
 
           <div id="alojamiento">
+<<<<<<< HEAD
             <br>
             <br>
             <label for="checkbox4"> Alojamiento</label>
             <img src="img/alojamiento.png">
             <br>
             <br>
+=======
+              <br>
+              <br>
+              <label for="checkbox4"> Alojamiento</label>
+              <img src="img/alojamiento.png">
+              <br>
+              <br>
+
+              <button type="button" class="btn btn-info" onclick="activar_busqueda_alojamiento()">Buscar por nombre</button>
+
+              <div id="busqueda_restaurantes">
+              <input type="text" id="myInput3" onkeyup="myFunction('myInput3', 'myTable3')" placeholder="Buscar alojamiento.." title="Type in a name">
+              <br>
+              <br>
+              <div id="mi_tabla_3">
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
+
+              </div>
+              </div>
 
 
-            <h2>Elija la distancia màximas</h2>
-
+<<<<<<< HEAD
             <div class="range-slider">
               <input class="range-slider__range" type="range" value="20" min="4" max="60" step="1" id="distance">
               <span class="range-slider__value">0</span>
             </div>
+=======
+
+              <br>
+              <br>
+            <h2>Elija la distancia màximas</h2>
+
+              <div class="range-slider">
+                <input class="range-slider__range" type="range" value="20" min="4" max="60" step="1" id="distance">
+                <span class="range-slider__value">0</span>
+              </div>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
           </div>
 
           <div id="museos">
 
+<<<<<<< HEAD
             <br>
             <br>
             <label for="checkbox4"> Museos</label>
             <img src="img/museos.png">
             <br>
             <br>
+=======
+              <br>
+              <br>
+              <label for="checkbox4"> Museos</label>
+              <img src="img/museos.png">
+              <br>
+              <br>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
 
             <button type="button" class="btn btn-info" onclick="activar_busqueda_museos()">Buscar por nombre</button>
 
+<<<<<<< HEAD
             <div id="busqueda_museos">
+=======
+              <div id="busqueda_museos">
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
               <input type="text" id="myInput" onkeyup="myFunction('myInput', 'myTable')" placeholder="Buscar museo.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_1">
+<<<<<<< HEAD
                 s
               </div>
             </div>
 
+=======
+              </div>
+              </div>
+
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
 
 
           </div>
           <div id="restaurantes">
 
+<<<<<<< HEAD
             <br>
             <br>
             <label for="checkbox4"> Restaurantes</label>
             <img src="img/restaurante.png">
             <br>
             <br>
+=======
+              <br>
+              <br>
+              <label for="checkbox4"> Restaurantes</label>
+              <img src="img/restaurante.png">
+              <br>
+              <br>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
 
             <button type="button" class="btn btn-info" onclick="activar_busqueda_restaurantes()">Buscar por nombre</button>
 
+<<<<<<< HEAD
             <div id="busqueda_restaurantes">
+=======
+              <div id="busqueda_restaurantes">
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
               <input type="text" id="myInput2" onkeyup="myFunction('myInput2', 'myTable2')" placeholder="Buscar restaurante.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_2">
+<<<<<<< HEAD
                 s
               </div>
             </div>
+=======
+              </div>
+              </div>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
           </div>
 
 
@@ -152,16 +226,28 @@
         <div class="col-md-6" id="transporte">
           <h2>Transporte</h2>
           <br>
+<<<<<<< HEAD
           <select onclick="selecionar_transporte()" name="propertyType" id="seleccion2">
                <option value="1" selected="selected">Ninguno</option>
                <option value="2">Mapa de transmilenio</option>
+=======
+            <select onclick="selecionar_transporte()"  name="propertyType" id="seleccion2">
+               <option value="1" selected="selected">Ninguno</option>
+               <option value="2">Mapa de transmilenio</option>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
                <option value="3">Puntos de recarga</option>
                <option value="4">Alquiler de carros</option>
             </select>
 
+<<<<<<< HEAD
 
           <div id="puntos_recarga"> Puntos de recarga</div>
           <div id="alquiler"> Alquiler</div>
+=======
+
+            <div id="puntos_recarga"> Puntos de recarga</div>
+            <div id="alquiler" > Alquiler</div>
+>>>>>>> 589af2ced518036dcb7c2d2749fc497fedf5b244
 
 
 
@@ -178,10 +264,38 @@
 
 
       </div>
+
+
+      <!-- Trigger the modal with a button
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="titulo">Modal Header</h4>
+      </div>
+      <div class="modal-body" id="contenido1">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
     </section>
     <!-- /opciones-->
-
-
 
 
     <!-- mapa-->
@@ -279,6 +393,9 @@
   <script src="js/Chart.min.js"></script>
   <script src="js/motivacion.js"></script>
   <script src="js/menu.js"></script>
+  <script src="js/general.js"></script>
+  <script src="js/alojamiento.js"></script>
+
   <script src="js/map.js" type="text/javascript"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBomiMvRuxhyD_nIyDoFCn6jFbVyDnI&callback=initMap"></script>
 
