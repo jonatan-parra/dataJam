@@ -66,7 +66,7 @@
   <div class="container">
     <!-- Container principal -->
 
-   <!-- opciones-->
+    <!-- opciones-->
     <section id="mapa" class="section-padding">
       <div class="row">
         <h1>Vive tu ciudad</h1>
@@ -74,7 +74,7 @@
 
           <h2>Tus sitios favoritos</h2>
           <br>
-            <select onclick="selecionar_favorito()" name="propertyType" id="seleccion1">
+          <select onclick="selecionar_favorito()" name="propertyType" id="seleccion1">
                <option  value="1" selected="selected">Ninguno</option>
                <option  value="2">Alojamiento</option>
                <option  value="3">Restaurantes</option>
@@ -87,64 +87,64 @@
           </div>
 
           <div id="alojamiento">
-              <br>
-              <br>
-              <label for="checkbox4"> Alojamiento</label>
-              <img src="img/alojamiento.png">
-              <br>
-              <br>
+            <br>
+            <br>
+            <label for="checkbox4"> Alojamiento</label>
+            <img src="img/alojamiento.png">
+            <br>
+            <br>
 
 
             <h2>Elija la distancia màximas</h2>
 
-              <div class="range-slider">
-                <input class="range-slider__range" type="range" value="20" min="4" max="60" step="1" id="distance">
-                <span class="range-slider__value">0</span>
-              </div>
+            <div class="range-slider">
+              <input class="range-slider__range" type="range" value="20" min="4" max="60" step="1" id="distance">
+              <span class="range-slider__value">0</span>
+            </div>
           </div>
 
           <div id="museos">
 
-              <br>
-              <br>
-              <label for="checkbox4"> Museos</label>
-              <img src="img/museos.png">
-              <br>
-              <br>
+            <br>
+            <br>
+            <label for="checkbox4"> Museos</label>
+            <img src="img/museos.png">
+            <br>
+            <br>
 
-              <button type="button" class="btn btn-info" onclick="activar_busqueda_museos()">Buscar por nombre</button>
+            <button type="button" class="btn btn-info" onclick="activar_busqueda_museos()">Buscar por nombre</button>
 
-              <div id="busqueda_museos">
+            <div id="busqueda_museos">
               <input type="text" id="myInput" onkeyup="myFunction('myInput', 'myTable')" placeholder="Buscar museo.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_1">
-s
+                s
               </div>
-              </div>
+            </div>
 
 
 
           </div>
           <div id="restaurantes">
 
-              <br>
-              <br>
-              <label for="checkbox4"> Restaurantes</label>
-              <img src="img/restaurante.png">
-              <br>
-              <br>
+            <br>
+            <br>
+            <label for="checkbox4"> Restaurantes</label>
+            <img src="img/restaurante.png">
+            <br>
+            <br>
 
-              <button type="button" class="btn btn-info" onclick="activar_busqueda_restaurantes()">Buscar por nombre</button>
+            <button type="button" class="btn btn-info" onclick="activar_busqueda_restaurantes()">Buscar por nombre</button>
 
-              <div id="busqueda_restaurantes">
+            <div id="busqueda_restaurantes">
               <input type="text" id="myInput2" onkeyup="myFunction('myInput2', 'myTable2')" placeholder="Buscar restaurante.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_2">
-s
+                s
               </div>
-              </div>
+            </div>
           </div>
 
 
@@ -152,7 +152,7 @@ s
         <div class="col-md-6" id="transporte">
           <h2>Transporte</h2>
           <br>
-            <select onclick="selecionar_transporte()"  name="propertyType" id="seleccion2">
+          <select onclick="selecionar_transporte()" name="propertyType" id="seleccion2">
                <option value="1" selected="selected">Ninguno</option>
                <option value="2">Mapa de transmilenio</option>
                <option value="3">Puntos de recarga</option>
@@ -160,8 +160,8 @@ s
             </select>
 
 
-            <div id="puntos_recarga"> Puntos de recarga</div>
-            <div id="alquiler" > Alquiler</div>
+          <div id="puntos_recarga"> Puntos de recarga</div>
+          <div id="alquiler"> Alquiler</div>
 
 
 
@@ -169,7 +169,7 @@ s
 
         </div>
         <div id="mapa_transmilenio">
-              <img src="img/estaciones.jpg"  class="img-responsive" >
+          <img src="img/estaciones.jpg" class="img-responsive">
         </div>
 
 
@@ -199,7 +199,7 @@ s
       <div class="row">
         <div class="col-md-12" id="histo_container">
           <div id="histo">
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="histoChart" width="400" height="400"></canvas>
           </div>
         </div>
       </div>
@@ -271,10 +271,10 @@ s
   <script src="js/papaparse.min.js"></script>
   <script src="js/csv.js"></script>
   <script type="text/javascript">
-  function asd(a) {
-    console.log(a);
-  }
-  csv('motivacion.csv',asd)
+    function asd(a) {
+      // console.log(a);
+    }
+    csv('motivacion.csv', asd)
   </script>
   <script src="js/Chart.min.js"></script>
   <script src="js/motivacion.js"></script>
