@@ -22,3 +22,10 @@ function traer(url){
     variable=null;
     return local;
 }
+function getArrayColumn(json, colname){
+    Arr=[];
+    for(var i=0; i<json.length;i++){
+	Arr.push(json[i][colname]);
+    }
+    return Arr;
+}
