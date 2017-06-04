@@ -1,7 +1,5 @@
-//var ctx = document.getElementById('histo');
-//
-console.log(document.getElementById("histo"))
-var myChart = new Chart(document.getElementById("myChart"), {
+var ctx = document.getElementById("histoChart");
+var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
