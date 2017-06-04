@@ -39,4 +39,9 @@ function getArrayColumn(json, colname){
     }
     return Arr;
 }
+
+function museoInfo(ele){
+    json=traer("museos");
+    return json[i];
+}
 fullJSON("https://www.datos.gov.co/resource/mdh3-rurf.json");  

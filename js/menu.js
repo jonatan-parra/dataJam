@@ -188,9 +188,10 @@ function cargar_tabla_museos(museos, direccion){
 
 
 		datos = traer('museos');
-		console.log(datos);
 		var museos = getArrayColumn(datos, "nombre_del_museo");
 		var direccion = getArrayColumn(datos, "direccion");
+
+
 
 
 
@@ -204,15 +205,47 @@ function cargar_tabla_museos(museos, direccion){
 
 
 	for (var i = 0; i < museos.length; i++) {
-		respuesta += '<tr>' + '<td>' + museos[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
-		console.log("en for")
+		
+		respuesta += '<tr onclick="museos_mensaje( ' + i +' )">' + '<td>' + museos[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
+			
 	}
-
+// onclick="selecionar_transporte()"
 	respuesta += '</table>'
 
 	document.getElementById("mi_tabla_1").innerHTML = respuesta;
 }
 
+function museos_mensaje(nombre){
+	respuesta = museoInfo(nombre);
+	console.log(respuesta);
+	var r = "";
+	
+
+	document.getElementById("titulo").innerHTML = respuesta["nombre_del_museo"];
+	
+	r = "<strong> Caracter: </strong>" +  respuesta["caracter"];
+	r += "<br>"
+	r += " <strong> Celular:  </strong>" + respuesta["celular"];
+	r += "<br>"
+	r += " <strong> Correo:  </strong>" +  respuesta["correo_electr_nico"];
+	r += "<br>"
+	r += " <strong>  Dirección: </strong>" +  respuesta["direccion"];
+	r += "<br>"
+	r += "<strong>  localidad:  </strong>" +  respuesta["localidad"];
+	r += "<br>"
+	
+	r += " <strong> Página web: </strong> " + respuesta["pagina_web"];
+	r += "<br>"
+	r += " <strong>  Telefono fijo:  </strong>" + respuesta["telefono_fijo"];
+
+
+	console.log(r)
+	document.getElementById("contenido1").innerHTML = r;
+
+	$('#myModal').modal('show'); // abr
+
+
+}
 
 
 function cargar_tabla_restaurantes(){
@@ -257,7 +290,7 @@ function cargar_tabla_alojamiento(){
 
 
 	for (var i = 0; i < restaurantes.length; i++) {
-		respuesta += '<tr>' + '<td>' + restaurantes[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
+		respuesta += '<tr >' + '<td>' + restaurantes[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
 		console.log("en for")
 	}
 
