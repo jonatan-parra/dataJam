@@ -1,5 +1,6 @@
 function csv(dir) {
   $.ajax({
+    async: false,
     url: './docs/'+dir,
     dataType: 'text',
   }).done(successFunction);

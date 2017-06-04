@@ -1,11 +1,12 @@
 function cargarAlojamiento(){
   $.ajax({
-    async: false,
     url: './docs/alojamiento.csv',
     dataType: 'text',
   }).done(procesarDatos);
+  console.log(pos);
 }
 
+var pos = [];
 function procesarDatos(data){
   var allRows = data.split(/\r?\n|\r/);
   var labels = []
@@ -18,30 +19,26 @@ function procesarDatos(data){
         labels.push(rowCells[rowCell])
       } else {
         info.push(rowCells[rowCell])
-        console.log(labels);
+        pos.push([rowCells[0], codeAddress(rowCells[4])])
+        var alojamientoData = {
+          nom: rowCells[2],
+          tipo: rowCells[3],
+          dir: rowCells[4],
+          localidad: rowCells[5],
+          tel: rowCells[6],
+          email: rowCells[7],
+          web: rowCells[8],
+          price: rowCells[9],
+          zona: rowCells[10],
+          //localizacion: codeAddress(rowCells[4])
+        }
+        rowCell = rowCells.length;
+        //console.log(alojamientoData);
       }
     }
     field.push(info)
     info = []
   }
-
-  /*var data = {
-    nom: ,
-    tipo ,
-    dir: ,
-    tel: ,
-    email: ,
-    web: ,
-    price: ,
-    zona: ,
-    localizacion: new google.maps.LatLng(parse)
-  }*
-/*var marker = new google.maps.Marker({ //Line 1
-		position: {"KR 7 127 45"}, //Line2: Location to be highlighted
-		map: map//Line 3: Reference to map object
-	});
-*/
-  codeAddress();
 }
 
 function codeAddress(address) {
