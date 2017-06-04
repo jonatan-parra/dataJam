@@ -3,36 +3,24 @@ function cargarAlojamiento(){
     url: './docs/alojamiento.csv',
     dataType: 'text',
     complete: function(){
-      console.log(direcciones());
-      console.log(sitios());
-      /*for(i = 0; i < pos.length; i++){
+      for(i = 0; i < pos.length; i++){
         geocodeAddress(pos[i]);
-      }*/
+      }
     }
   }).done(procesarDatos);
 }
 
 function direcciones(){
   var dir =[]
-  var back = ""
-  for(i = 0; i < pos.length; i++){
-    if (back != pos[i]['dir']){
+  for(i = 0; i < pos.length; i++)
       dir.push(pos[i]['dir']);
-      back = pos[i]['dir'];
-    }
-  }
   return dir;
 }
 
 function sitios(){
   var nombreSitios =[]
-  var back = ""
-  for(i = 0; i < pos.length; i++){
-    if (back != pos[i]['nom']){
+  for(i = 0; i < pos.length; i++)
       nombreSitios.push(pos[i]['nom']);
-      back = pos[i]['nom'];
-    }
-  }
   return nombreSitios;
 }
 
@@ -43,6 +31,7 @@ function procesarDatos(data){
   var labels = []
   var field = []
   var info = []
+  var back;
   for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
     var rowCells = allRows[singleRow].split(',');
     for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
@@ -62,7 +51,10 @@ function procesarDatos(data){
           zona: rowCells[10],
           localizacion: ""
         }
-          pos.push(alojamientoData);
+        if(back != alojamientoData['nom']){
+            pos.push(alojamientoData);
+            back = alojamientoData['nom'];
+        }
       }
     }
     field.push(info)
@@ -75,24 +67,27 @@ function procesarDatos(data){
 var cont = 0;
 
 function geocodeAddress(datos) {
-  //console.log(datos['nom']);
   geocoder.geocode({
-    'address': "HOTEL SUNA BACATA"
+    'address': datos['nom']
     /*componentRestrictions: {
       country: 'CO',
       locality: "DC"
     }*/
   }, function(results, status) {
     if (status === 'OK') {
+      console.log(datos['nom']);
       //map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
+        title: datos['nom'],
+        map: map
+
       });
-    } else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+    }
+    else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
         wait = true;
         setTimeout("wait = true", 2000);
-        }
+      }
   });
 }
 
