@@ -16,7 +16,8 @@ var variable;
 function llenar(data){
     variable=data;
 }
-function traer(){
+function traer(url){
+    fullJSON(url);
     var local=variable;
     variable=null;
     return local;
