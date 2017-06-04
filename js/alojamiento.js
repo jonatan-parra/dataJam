@@ -2,9 +2,40 @@ function cargarAlojamiento(){
   $.ajax({
     url: './docs/alojamiento.csv',
     dataType: 'text',
+    complete: function(){
+      console.log(direcciones());
+      console.log(sitios());
+      /*for(i = 0; i < pos.length; i++){
+        geocodeAddress(pos[i]);
+      }*/
+    }
   }).done(procesarDatos);
-  console.log(pos);
 }
+
+function direcciones(){
+  var dir =[]
+  var back = ""
+  for(i = 0; i < pos.length; i++){
+    if (back != pos[i]['dir']){
+      dir.push(pos[i]['dir']);
+      back = pos[i]['dir'];
+    }
+  }
+  return dir;
+}
+
+function sitios(){
+  var nombreSitios =[]
+  var back = ""
+  for(i = 0; i < pos.length; i++){
+    if (back != pos[i]['nom']){
+      nombreSitios.push(pos[i]['nom']);
+      back = pos[i]['nom'];
+    }
+  }
+  return nombreSitios;
+}
+
 
 var pos = [];
 function procesarDatos(data){
@@ -19,7 +50,6 @@ function procesarDatos(data){
         labels.push(rowCells[rowCell])
       } else {
         info.push(rowCells[rowCell])
-        pos.push([rowCells[0], codeAddress(rowCells[4])])
         var alojamientoData = {
           nom: rowCells[2],
           tipo: rowCells[3],
@@ -30,45 +60,44 @@ function procesarDatos(data){
           web: rowCells[8],
           price: rowCells[9],
           zona: rowCells[10],
-          //localizacion: codeAddress(rowCells[4])
+          localizacion: ""
         }
-        rowCell = rowCells.length;
-        //console.log(alojamientoData);
+          pos.push(alojamientoData);
       }
     }
     field.push(info)
     info = []
   }
+  //geocodeAddress(alojamientoData)
+
 }
 
-function codeAddress(address) {
+var cont = 0;
 
-    geocoder = new google.maps.Geocoder();
-
-    //In this case it gets the address from an element on the page, but obviously you  could just pass it to the method instead
-
-    geocoder.geocode( {
-      'address' : address,
-      componentRestrictions: {
-        country: 'CO',
-        locality: "DC"
-      }
-    }, function( results, status ) {
-        if( status == google.maps.GeocoderStatus.OK ) {
-            //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
-            map.setCenter( results[0].geometry.location );
-            var marker = new google.maps.Marker( {
-                map     : map,
-                position: results[0].geometry.location
-            } );
-        } else {
-            alert( 'Geocode was not successful for the following reason: ' + status );
+function geocodeAddress(datos) {
+  //console.log(datos['nom']);
+  geocoder.geocode({
+    'address': "HOTEL SUNA BACATA"
+    /*componentRestrictions: {
+      country: 'CO',
+      locality: "DC"
+    }*/
+  }, function(results, status) {
+    if (status === 'OK') {
+      //map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+    } else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+        wait = true;
+        setTimeout("wait = true", 2000);
         }
-    } );
+  });
 }
 
-function makePoint(data, ico){
-	var contentString =
+function makePoint(data){
+	/*var contentString =
 		'<div id="content">'+
   		'<div id="siteNotice">'+
   		'</div>'+
@@ -80,28 +109,32 @@ function makePoint(data, ico){
     		'<!-- Trigger the modal with a link -->' +
 		'<br><a data-toggle="modal" href="#myModal">More info...</a>' +
     	'</div>'+
-  	'</div>';
+  	'</div>';*/
 
 
-    var infowindow = new google.maps.InfoWindow({
+    /*var infowindow = new google.maps.InfoWindow({
     	content: contentString,
     	maxWidth: 250
-  	});
+  	});*/
 
 
-	var icon = {
+	/*var icon = {
 		url: ico,
 	    scaledSize: new google.maps.Size(42, 42), // scaled size
 	    origin: new google.maps.Point(0,0), // origin
 	    anchor: new google.maps.Point(0, 0) // anchor
 
-	};
+	};*/
+
+  var p = geocodeAddress(data['dir']);
+  console.log(p);
+
 	var marker = new google.maps.Marker({ //Line 1
-		position: {lat: data.lat, lng: data.lon}, //Line2: Location to be highlighted
+		position: p, //Line2: Location to be highlighted
 		map: map,//Line 3: Reference to map object
-		title: data.name, //Line 4: Title to be given
-		icon: icon,
-		price: data.price
+		//title: data.name, //Line 4: Title to be given
+		//icon: icon,
+		//price: data.price
 	});
 
 
@@ -120,5 +153,5 @@ function makePoint(data, ico){
 
   	});*/
 
-  	placesPoints.push(marker);
+  	//placesPoints.push(marker);
 };
