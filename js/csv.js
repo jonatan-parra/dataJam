@@ -17,6 +17,5 @@ function successFunction(data) {
     field.push(info)
     info = []
   }
-  console.log(field);
   return field
 }
