@@ -33,7 +33,6 @@
 // }
 
 function csv(dir, func) {
-  var a = func
   $.ajax({
     url: './docs/' + dir,
     dataType: 'text',

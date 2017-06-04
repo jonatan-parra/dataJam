@@ -11,6 +11,13 @@ Papa.parse('./docs/motivacion.csv', {
       temp = results.data[i]
       lb.push(temp[1]);
     }
+    for (var i = 1; i < results.data.length; i++) {
+      for (var j = 0; j < results.data[i].length; j++) {
+        temp = results.data[i]
+        dt.push(temp[j]);
+      }
+    }
+    
     var barChartData = {
       labels: lb,
       datasets: [{
@@ -52,19 +59,6 @@ Papa.parse('./docs/motivacion.csv', {
       }]
 
     };
-
-    console.log(results.data.length);
-    for (var i = 0; i < results.data.length; i++) {
-      temp = results.data[i]
-      lb.push(temp[1]);
-      console.log(temp[1]);
-    }
-    for (var i = 1; i < results.data.length; i++) {
-      for (var j = 0; j < results.data[i].length; j++) {
-        temp = results.data[i]
-        dt.push(temp[j]);
-      }
-    }
     console.log(dt);
     var config = {
       type: 'bar',
