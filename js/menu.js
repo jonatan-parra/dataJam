@@ -187,7 +187,7 @@ function cargar_tabla_museos(museos, direccion){
 	//var direccion = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
 
 
-		datos = traer();
+		datos = traer('museos');
 		console.log(datos);
 		var museos = getArrayColumn(datos, "nombre_del_museo");
 		var direccion = getArrayColumn(datos, "direccion");
