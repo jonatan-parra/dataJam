@@ -250,8 +250,8 @@ function museos_mensaje(nombre){
 
 function cargar_tabla_restaurantes(){
 	
-	var restaurantes = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
-	var direccion = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	var restaurantes = ["restaurante 1", "restaurante 2", "restaurante 3", "restaurante 4"];
+	var direccion = ["direccion", "direccion 2", "direccion 3 ", "direccion 4"];
 	respuesta = "";
 
 	respuesta = ' <table id="myTable2"> ' +
