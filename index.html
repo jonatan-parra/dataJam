@@ -75,76 +75,88 @@
           <h2>Tus sitios favoritos</h2>
           <br>
             <select onclick="selecionar_favorito()" name="propertyType" id="seleccion1">
-               <option  value="1" selected="selected">Ninguno</option>
-               <option  value="2">Alojamiento</option>
+               <option  value="1" selected="selected">Ninguno</option> 
+               <option  value="2">Alojamiento</option> 
                <option  value="3">Restaurantes</option>
                <option  value="4">Museos</option>
                <option  value="5">Transporte</option>
             </select>
 
           <div id="lugar_seleccionado">
-
+            
           </div>
-
+          
           <div id="alojamiento">
-              <br>
+              <br>  
               <br>
               <label for="checkbox4"> Alojamiento</label>
               <img src="img/alojamiento.png">
-              <br>
+              <br>  
               <br>
 
+              <button type="button" class="btn btn-info" onclick="activar_busqueda_alojamiento()">Buscar por nombre</button>
 
+              <div id="busqueda_restaurantes"> 
+              <input type="text" id="myInput3" onkeyup="myFunction('myInput3', 'myTable3')" placeholder="Buscar alojamiento.." title="Type in a name">
+              <br>
+              <br>
+              <div id="mi_tabla_3">
+
+              </div>
+              </div>  
+
+
+          
+              <br>
+              <br>
             <h2>Elija la distancia màximas</h2>
-
+            
               <div class="range-slider">
                 <input class="range-slider__range" type="range" value="20" min="4" max="60" step="1" id="distance">
                 <span class="range-slider__value">0</span>
               </div>
           </div>
 
-          <div id="museos">
+          <div id="museos"> 
 
-              <br>
+              <br>  
               <br>
               <label for="checkbox4"> Museos</label>
               <img src="img/museos.png">
-              <br>
+              <br>  
               <br>
 
               <button type="button" class="btn btn-info" onclick="activar_busqueda_museos()">Buscar por nombre</button>
 
-              <div id="busqueda_museos">
+              <div id="busqueda_museos"> 
               <input type="text" id="myInput" onkeyup="myFunction('myInput', 'myTable')" placeholder="Buscar museo.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_1">
-s
               </div>
               </div>
-
+                                
 
 
           </div>
-          <div id="restaurantes">
+          <div id="restaurantes"> 
 
-              <br>
+              <br>  
               <br>
               <label for="checkbox4"> Restaurantes</label>
               <img src="img/restaurante.png">
-              <br>
+              <br>  
               <br>
 
               <button type="button" class="btn btn-info" onclick="activar_busqueda_restaurantes()">Buscar por nombre</button>
 
-              <div id="busqueda_restaurantes">
+              <div id="busqueda_restaurantes"> 
               <input type="text" id="myInput2" onkeyup="myFunction('myInput2', 'myTable2')" placeholder="Buscar restaurante.." title="Type in a name">
               <br>
               <br>
               <div id="mi_tabla_2">
-s
               </div>
-              </div>
+              </div>     
           </div>
 
 
@@ -153,13 +165,13 @@ s
           <h2>Transporte</h2>
           <br>
             <select onclick="selecionar_transporte()"  name="propertyType" id="seleccion2">
-               <option value="1" selected="selected">Ninguno</option>
-               <option value="2">Mapa de transmilenio</option>
+               <option value="1" selected="selected">Ninguno</option> 
+               <option value="2">Mapa de transmilenio</option> 
                <option value="3">Puntos de recarga</option>
                <option value="4">Alquiler de carros</option>
             </select>
 
-
+            
             <div id="puntos_recarga"> Puntos de recarga</div>
             <div id="alquiler" > Alquiler</div>
 
@@ -180,8 +192,6 @@ s
       </div>
     </section>
     <!-- /opciones-->
-
-
 
 
     <!-- mapa-->
@@ -268,17 +278,12 @@ s
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
-  <script src="js/papaparse.min.js"></script>
-  <script src="js/csv.js"></script>
-  <script type="text/javascript">
-  function asd(a) {
-    console.log(a);
-  }
-  csv('motivacion.csv',asd)
-  </script>
   <script src="js/Chart.min.js"></script>
   <script src="js/motivacion.js"></script>
   <script src="js/menu.js"></script>
+  <script src="js/general.js"></script>
+  <script src="js/alojamiento.js"></script>
+
   <script src="js/map.js" type="text/javascript"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBomiMvRuxhyD_nIyDoFCn6jFbVyDnI&callback=initMap"></script>
 

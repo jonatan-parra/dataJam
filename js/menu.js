@@ -44,6 +44,14 @@ function selecionar_favorito(){
 
 		$('#transporte').css('visibility', 'hidden');
 		$('#transporte').css('display', 'none');
+
+
+
+
+
+		
+
+
 	}
 	if (seleccion == 5) {
 		$('#transporte').css('visibility', 'visible');
@@ -158,10 +166,34 @@ function activar_busqueda_restaurantes(){
 	}
 }
 
+function activar_busqueda_alojamiento(){
+	console.log("Entro activar_busqueda_restaurantes")
+	cargar_tabla_alojamiento();
+	if (mostrando_restaurantes == false){
+		$('#busqueda_restaurantes').css('visibility', 'visible');
+		$('#busqueda_restaurantes').css('display', 'block');
+		mostrando_restaurantes = true;
+	} else {
+		$('#busqueda_restaurantes').css('visibility', 'hidden');
+		$('#busqueda_restaurantes').css('display', 'none');
+		mostrando_restaurantes = false;
+	}
+}
 
-function cargar_tabla_museos(){
-	var museos = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
-	var direccion = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+
+
+function cargar_tabla_museos(museos, direccion){
+	//var museos = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+	//var direccion = ["museo Nacional", "Museo del oro", "Museo jdjdj"];
+
+
+		datos = traer();
+		console.log(datos);
+		var museos = getArrayColumn(datos, "nombre_del_museo");
+		var direccion = getArrayColumn(datos, "direccion");
+
+
+
 	respuesta = "";
 
 	respuesta = ' <table id="myTable"> ' +
@@ -184,7 +216,7 @@ function cargar_tabla_museos(){
 
 
 function cargar_tabla_restaurantes(){
-	console.log("Entro crear cargar_tabla_restaurantes")
+	
 	var restaurantes = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
 	var direccion = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
 	respuesta = "";
@@ -205,6 +237,36 @@ function cargar_tabla_restaurantes(){
 
 	document.getElementById("mi_tabla_2").innerHTML = respuesta;
 }
+
+
+function cargar_tabla_alojamiento(){
+	
+	//var restaurantes = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	//var direccion = ["restaurante", "lugar", "ksdkasd", "adsdsda"];
+	console.log("Entro a cargar_tabla_alojamiento")
+	restaurantes = sitios();
+	direccion = direcciones();
+	console.log(restaurantes)
+	respuesta = "";
+
+	respuesta = ' <table id="myTable3"> ' +
+                ' <tr class="header"> ' +
+                ' <th style="width:60%;">Nombre</th> ' +
+                ' <th style="width:40%;">Dirección</th> ' +
+                ' </tr>';
+
+
+	for (var i = 0; i < restaurantes.length; i++) {
+		respuesta += '<tr>' + '<td>' + restaurantes[i] + '</td>'  + '<td>' + direccion[i] + '</td>'  + '</tr>'
+		console.log("en for")
+	}
+
+	respuesta += '</table>'
+
+	document.getElementById("mi_tabla_3").innerHTML = respuesta;
+}
+
+
 
 
 
