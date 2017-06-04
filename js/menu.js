@@ -5,7 +5,7 @@ var mostrando_alojamiento;
 
 $(document).ready(function() { 
 	ocultar_todo();
-
+	cargarAlojamiento();
 
 	$('#transporte').css('visibility', 'hidden');
 	$('#transporte').css('display', 'none');

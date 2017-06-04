@@ -21,6 +21,9 @@ function sitios(){
   var nombreSitios =[]
   for(i = 0; i < pos.length; i++)
       nombreSitios.push(pos[i]['nom']);
+   
+  console.log("Imprimiendo pos")
+  console.log(pos)
   return nombreSitios;
 }
 
